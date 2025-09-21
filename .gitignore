@@ -1,0 +1,150 @@
+###############################################
+# Python                                     #
+###############################################
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+*.dll
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-wheel-metadata/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.pyre/
+
+# Type checker caches
+.mypy_cache/
+.pytype/
+.dmypy.json
+
+# Linters
+.ruff_cache/
+.pylint.d/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.conda/
+
+# dotenv files (never commit secrets)
+.env
+.env.*
+*.env
+
+# pyenv
+.python-version
+
+# Docs
+/site
+
+###############################################
+# Editors / IDEs                             #
+###############################################
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+
+###############################################
+# OS files                                   #
+###############################################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+###############################################
+# Logs & temp                                #
+###############################################
+logs/
+*.log
+log/
+/tmp/
+/tmp/**
+tmp/
+*.tmp
+
+###############################################
+# Docker                                     #
+###############################################
+# Keep Dockerfile(s) and compose in VCS; ignore local overrides
+.docker/
+docker/*.env
+docker-compose.override.yml
+
+# Common local volume directories (adjust as needed)
+data/
+postgres-data/
+pgdata/
+
+###############################################
+# Databases                                  #
+###############################################
+*.sqlite3
+
+###############################################
+# Node (if present)                          #
+###############################################
+node_modules/
+
+###############################################
+# ML / model caches (adjust to your project) #
+###############################################
+.cache/
+**/.cache/
+datasets/
+checkpoints/
+outputs/
+wandb/
+mlruns/
+models/
+
+# Notes:
+# - uv.lock SHOULD be committed for reproducible builds; we do NOT ignore it.
+# - If you need to track any ignored folder (e.g., data/), add an exception
+#   like: !data/.keep and commit a placeholder file.

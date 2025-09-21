@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: pgvector-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: vectordb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./docker/initdb:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d vectordb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # model-downloader:
+  #   image: python:3.11-slim
+  #   container_name: model-downloader
+  #   restart: "no"
+  #   working_dir: /workspace
+  #   volumes:
+  #     - ./:/workspace
+  #     # 将宿主机的 ModelScope 缓存目录绑定到容器内，以避免容器每次都重新下载模型
+  #     # 默认使用相对目录 ./model_cache；也可通过环境变量 MODEL_CACHE_HOST 指定绝对路径
+  #     - ${MODEL_CACHE_HOST:-./model_cache}:/root/.cache/modelscope/hub/models:rw
+  #   command: ["python", "scripts/download_model.py"]
+
+volumes:
+  pg_data:
